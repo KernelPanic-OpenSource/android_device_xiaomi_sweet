@@ -26,6 +26,9 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 30
 # A/B
 AB_OTA_UPDATER := false
 
+# Platform
+TARGET_BOARD_PLATFORM := sm6150
+
 # Audio
 
 TARGET_EXCLUDES_AUDIOFX := true
@@ -77,14 +80,15 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.manager@1.0
-
 # Init
 PRODUCT_PACKAGES += \
     init.qcom.rc
+
+# QTI Components
+TARGET_COMMON_QTI_COMPONENTS := \
+    bt \
+    perf \
+    usb
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -151,6 +155,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
+
+# RIL
+PRODUCT_PACKAGES += \
+    librmnetctl
 
 # WiFi
 PRODUCT_COPY_FILES += \
