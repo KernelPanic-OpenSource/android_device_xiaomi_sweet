@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_sweet.mk
+    $(LOCAL_DIR)/sweet.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_sweet-user \
-    omni_sweet-userdebug \
-    omni_sweet-eng
+    sweet-user \
+    sweet-userdebug \
+    sweet-eng
