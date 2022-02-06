@@ -74,6 +74,9 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+PRODUCT_COPY_FILES += \
+    $(TARGET_PREBUILT_KERNEL):Image \
+    $(TARGET_PREBUILT_DTB):dtb.img
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
@@ -129,7 +132,6 @@ TARGET_SCREEN_DENSITY := 440
 
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
-include vendor/omni/sepolicy/sepolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
 
